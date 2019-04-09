@@ -1,6 +1,8 @@
 # okhttp-utils
 
->由于个人原因，现已停止维护。
+> 从[鸿洋大神](https://github.com/hongyangAndroid/okhttputils)处（已停止维护） Fork 过来。
+
+> 用于个人学习、使用。
 
 对okhttp的封装类，okhttp见：[https://github.com/square/okhttp](https://github.com/square/okhttp).
 
