@@ -7,3 +7,5 @@
 /build
 /captures
 /okhttp3*
+/Android-okhttputils.iml
+/okhttputils/okhttputils-okhttputils.iml
