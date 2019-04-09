@@ -3,23 +3,13 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT" />
+        </compositeConfiguration>
+        <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="1.7" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/okhttputils" />
-            <option value="$PROJECT_DIR$/sample-okhttp" />
-          </set>
-        </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/okhttputils" />
-            <option value="$PROJECT_DIR$/sample-okhttp" />
-          </set>
-        </option>
+        <option name="gradleHome" value="D:/Program/env/gradle-4.10.3" />
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
