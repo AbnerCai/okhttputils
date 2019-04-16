@@ -6,21 +6,9 @@
 
 对okhttp的封装类，okhttp见：[https://github.com/square/okhttp](https://github.com/square/okhttp).
 
-目前对应okhttp版本`3.3.1`.
+目前对应okhttp版本`3.10.0`.
 
 ## 用法
-
-* Android Studio
-	
-	```
-	compile 'com.zhy:okhttputils:2.6.2'
-	```
-	
-* Eclipse
-	
-	下载最新jar:[okhttputils-2\_6\_2.jar](okhttputils-2_6_2.jar?raw=true)
-
-	注：需要同时导入okhttp和okio的jar，下载见：[https://github.com/square/okhttp](https://github.com/square/okhttp).
 	
 
 ## 目前对以下需求进行了封装
@@ -40,11 +28,9 @@
 默认情况下，将直接使用okhttp默认的配置生成OkhttpClient，如果你有任何配置，记得在Application中调用`initClient`方法进行设置。
 
 ```java
-public class MyApplication extends Application
-{	
+public class MyApplication extends Application {	
 	@Override
-    public void onCreate()
-    {
+    public void onCreate() {
         super.onCreate();
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -55,7 +41,6 @@ public class MyApplication extends Application
                  .build();
                  
         OkHttpUtils.initClient(okHttpClient);
-
     }
 }
 ```
@@ -148,17 +133,14 @@ OkHttpUtils
     .addParams("username", "hyman")
     .addParams("password", "123")
     .build()
-    .execute(new StringCallback()
-	        {
+    .execute(new StringCallback() {
 	            @Override
-	            public void onError(Request request, Exception e)
-	            {
+	            public void onError(Request request, Exception e) {
 	                
 	            }
 	
 	            @Override
-	            public void onResponse(String response)
-	            {
+	            public void onResponse(String response) {
 	
 	            }
 	        });

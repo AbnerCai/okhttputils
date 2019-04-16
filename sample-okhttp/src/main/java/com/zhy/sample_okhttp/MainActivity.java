@@ -29,8 +29,7 @@ import okhttp3.CookieJar;
 import okhttp3.MediaType;
 import okhttp3.Request;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
 
     private String mBaseUrl = "http://192.168.31.242:8888/okHttpServer/";
 
@@ -41,47 +40,41 @@ public class MainActivity extends AppCompatActivity
     private ProgressBar mProgressBar;
 
 
-    public class MyStringCallback extends StringCallback
-    {
+    public class MyStringCallback extends StringCallback {
         @Override
-        public void onBefore(Request request, int id)
-        {
+        public void onBefore(Request request, int id) {
             setTitle("loading...");
         }
 
         @Override
-        public void onAfter(int id)
-        {
+        public void onAfter(int id) {
             setTitle("Sample-okHttp");
         }
 
         @Override
-        public void onError(Call call, Exception e, int id)
-        {
+        public void onError(Call call, Exception e, int id) {
             e.printStackTrace();
             mTv.setText("onError:" + e.getMessage());
         }
 
         @Override
-        public void onResponse(String response, int id)
-        {
+        public void onResponse(String response, int id) {
             Log.e(TAG, "onResponse：complete");
             mTv.setText("onResponse:" + response);
 
-            switch (id)
-            {
+            switch (id) {
                 case 100:
                     Toast.makeText(MainActivity.this, "http", Toast.LENGTH_SHORT).show();
                     break;
                 case 101:
                     Toast.makeText(MainActivity.this, "https", Toast.LENGTH_SHORT).show();
                     break;
+                default:
             }
         }
 
         @Override
-        public void inProgress(float progress, long total, int id)
-        {
+        public void inProgress(float progress, long total, int id) {
             Log.e(TAG, "inProgress:" + progress);
             mProgressBar.setProgress((int) (100 * progress));
         }
@@ -89,13 +82,9 @@ public class MainActivity extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-
-
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         mTv = (TextView) findViewById(R.id.id_textview);
         mImageView = (ImageView) findViewById(R.id.id_imageview);
@@ -103,8 +92,7 @@ public class MainActivity extends AppCompatActivity
         mProgressBar.setMax(100);
     }
 
-    public void getHtml(View view)
-    {
+    public void getHtml(View view) {
         String url = "http://www.zhiyun-tech.com/App/Rider-M/changelog-zh.txt";
         url="http://www.391k.com/api/xapi.ashx/info.json?key=bd_hyrzjjfb4modhj&size=10&page=1";
         OkHttpUtils
