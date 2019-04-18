@@ -6,10 +6,11 @@ import java.lang.reflect.ParameterizedType;
 import okhttp3.Response;
 
 /**
- * Created by JimGong on 2016/6/23.
+ * @author JimGong
+ * @date 2016/6/23.
  */
-
 public abstract class GenericsCallback<T> extends Callback<T> {
+
     IGenericsSerializator mGenericsSerializator;
 
     public GenericsCallback(IGenericsSerializator serializator) {
