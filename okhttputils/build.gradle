@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.novoda.bintray-release'//添加
 
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -25,34 +25,16 @@ android {
 
 }
 
-
-task clearJar(type: Delete) {
-    delete 'build/outputs/okhttputils.jar'
-}
-
-task makeJar(type: Copy) {
-    from('build/intermediates/bundles/release/')
-    into('build/outputs/')
-    include('classes.jar')
-    rename ('classes.jar', 'okhttputils-2_6_2.jar')
-}
-
-makeJar.dependsOn(clearJar, build)
-
-
-
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
     api 'com.squareup.okhttp3:okhttp:3.10.0'
 }
 
-//添加
-//publish {
-//    userOrg = 'hongyangandroid'//bintray.com用户名
-//    groupId = 'com.zhy'//jcenter上的路径
-//    artifactId = 'okhttputils'//项目名称
-//    publishVersion = '2.6.2'//版本号
-//    desc = 'Oh hi, this is a nice description for a project, right?'
-//    website = 'https://github.com/hongyangAndroid/okhttp-utils'
-//}
-
+publish {
+    userOrg = 'nebulas' // bintray.com用户名
+    groupId = 'top.abner' // jcenter上的路径
+    artifactId = 'okhttputils' // 项目名称
+    publishVersion = '0.0.1'
+    desc = 'okhttputils'
+    website = 'https://github.com/AbnerCai/Abner'
+}
